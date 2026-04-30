@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/orders_db
+    username: public_user
+    password: publicN3xt!
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+  kafka:
+    producer:
+      # MUST be the Spring Kafka version, NOT com.fasterxml.jackson...
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

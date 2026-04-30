@@ -1,0 +1,7 @@
+server:
+  port: 8083
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://public_user:publicN3xt!@localhost:27017/admin

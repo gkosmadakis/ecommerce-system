@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  kafka:
+    bootstrap-servers: kafka:29092
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+resilience4j:
+  retry:
+    instances:
+      notificationRetry:
+        max-attempts: 3
+        wait-duration: 2s
+        exponential-backoff-multiplier: 2

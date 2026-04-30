@@ -1,0 +1,15 @@
+server:
+  port: 9999
+spring:
+  kafka:
+    admin:
+      auto-create: true
+    producer:
+      transaction-id-prefix: ""
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
