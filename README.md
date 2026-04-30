@@ -20,6 +20,10 @@ This system consists of multiple independent services communicating via Apache K
 | kafka                | Event streaming platform |
 | zookeeper            | Kafka coordination |
 
+### **Build and Run Instructions**
+In the root folder of the project where the packaging pom exists run:
+mvn clean install
+docker compose up -d
 ---
 ### **Tech Stack**
 
@@ -28,7 +32,7 @@ This system consists of multiple independent services communicating via Apache K
 * Spring Data JPA
 * Spring Kafka
 * PostgreSQL
-* MongoDB (optional)
+* MongoDB
 * Apache Kafka
 * Testcontainers
 * Docker & Docker Compose
